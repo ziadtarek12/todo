@@ -4,11 +4,21 @@
         <title>
             To Do List
         </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     </head>
 
-    <body>
-        <h1>
+    <body style="margin-left: 5px;">
+        <h1 class="text-center" style="font-family: Arial, Helvetica, sans-serif;">
             Welcome to TO DO List 
         </h1>
+        <ol class="list-group list-group-numbered">
+            {% for task in tasks %}
+                <li class="list-group-item">
+                        {{ task.Task }}
+                </li>
+            {% endfor %}
+        </ol>
+        <a href="{% url 'todo:add' %}" class="btn btn-primary" style="margin-left: 5px;">Add</a>
     </body>
 </html>
