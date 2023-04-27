@@ -1,0 +1,22 @@
+{% extends "app1/layout.html" %}
+
+{% block body %}
+    <h1>Add</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="{{ form.task.id_for_label }}">Task:</label>
+            {{ form.task }}
+        </div>
+        
+        <div>
+            <label for="{{ form.priority.id_for_label }}">Priority:</label>
+            {{ form.priority }}
+        </div>
+        <br>
+        <input type = "submit" class="btn btn-primary">
+
+    </form>
+    <a href="{% url 'todo:index' %}" class="btn btn-primary" style="margin-top: 5px;">Back</a>
+{% endblock %}      
